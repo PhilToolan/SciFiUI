@@ -9,9 +9,9 @@ public class MovingCircle
     private float y;
     private float diameter;
     private float radius;
-    PApplet ui;
+    UI ui;
 
-    public MovingCircle(PApplet ui, float x, float y, float diameter)
+    public MovingCircle(UI ui, float x, float y, float diameter)
     {
         this.ui = ui;
         this.x = x;
@@ -26,6 +26,7 @@ public class MovingCircle
         ui.noFill();
         ui.ellipse(x, y, diameter, diameter);
         ui.fill(255);
+        // Static field
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.text("I am a moving circle", x, y);
 
