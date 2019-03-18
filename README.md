@@ -1,10 +1,10 @@
 # SciFi UI Project
 
-Name:
+Name: Philip Toolan
 
-Student Number: 
+Student Number: C17433026
 
-Fork this repository and use it a starter project for your assignment
+
 
 # Description of the assignment
 
