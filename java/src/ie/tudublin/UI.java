@@ -50,6 +50,7 @@ public class UI extends PApplet
 
         r.update();
         r.render();
+        r.reset();
 
         if (checkKey(LEFT))
         {
