@@ -44,17 +44,22 @@ public class UI extends PApplet
     {
         background(0);
         b.render();
+        b.mouseClicked();
 
         mc.update();
         mc.render();
 
-        r.update();
-        r.render();
-        r.reset();
 
         if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");
+        }
+
+        if ()
+        {
+            r.update();
+            r.render();
+            r.reset();
         }
     }
 }

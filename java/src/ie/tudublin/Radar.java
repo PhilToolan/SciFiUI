@@ -29,10 +29,10 @@ public class Radar
         angle += 0.01;
         y1 += (radius * (Math.sin(angle)));
         x1 += (radius * (Math.cos(angle)));
-        System.out.println((radius * (Math.sin(angle))));
+       /* System.out.println((radius * (Math.sin(angle))));
         System.out.println((radius * (Math.cos(angle))));
         System.out.println(x1);
-        System.out.println(y1);
+        System.out.println(y1);*/
     }
 
     public void render()
