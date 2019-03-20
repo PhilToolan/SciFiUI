@@ -26,9 +26,9 @@ public class Radar
 
     public void update()
     {
-        angle += 0.005;
-        x1 += (radius * (Math.sin(angle)));
-        y1 += (radius * (Math.cos(angle)));
+        angle += 0.01;
+        y1 += (radius * (Math.sin(angle)));
+        x1 += (radius * (Math.cos(angle)));
         System.out.println((radius * (Math.sin(angle))));
         System.out.println((radius * (Math.cos(angle))));
         System.out.println(x1);
