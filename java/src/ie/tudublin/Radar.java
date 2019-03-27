@@ -40,6 +40,8 @@ public class Radar
         ui.stroke(0, 204, 0);
         ui.noFill();
         ui.ellipse(x, y, diameter, diameter);
+        ui.ellipse(x, y, diameter / 2, diameter / 2);
+        ui.ellipse(x, y, diameter / 3, diameter / 3);
         ui.fill(0, 204, 0);
         ui.line(x, y, x1, y1);
 
