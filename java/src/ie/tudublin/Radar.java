@@ -37,10 +37,10 @@ public class Radar
 
     public void render()
     {
-        ui.stroke(255);
+        ui.stroke(0, 204, 0);
         ui.noFill();
         ui.ellipse(x, y, diameter, diameter);
-        ui.fill(255);
+        ui.fill(0, 204, 0);
         ui.line(x, y, x1, y1);
 
     }

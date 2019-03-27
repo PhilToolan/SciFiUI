@@ -35,7 +35,7 @@ public class UI extends PApplet
 
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
+        b = new Button(this, 50, 50, 100, 50, "Draw rect");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         r = new Radar(this, width / 5, height / 5, 100);
     }
@@ -44,22 +44,18 @@ public class UI extends PApplet
     {
         background(0);
         b.render();
-        b.mouseClicked();
 
         mc.update();
         mc.render();
 
+        r.render();
+        r.reset();
+        r.update();
+
 
         if (checkKey(LEFT))
         {
-            System.out.println("Left arrow key pressed");
-        }
-
-        if ()
-        {
-            r.update();
-            r.render();
-            r.reset();
+            
         }
     }
 }
