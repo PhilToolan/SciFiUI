@@ -5,6 +5,7 @@ import processing.core.PApplet;
 public class UI extends PApplet
 {
     Button b;
+    Button2 b2;
     MovingCircle mc;
     Radar ra;
     Weather w;
@@ -38,8 +39,9 @@ public class UI extends PApplet
     public void setup()
     {
         b = new Button(this, 50, 50, 100, 50, "Blinds");
+        b2 = new Button2(this, 200, 50, 100, 50, "Travel");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
-        ra = new Radar(this, width / 5, height / 5, 100);
+        ra = new Radar(this, width / 8, height - 100, 100);
         w = new Weather(this, 700, 100, width / 8);
         ro = new Room(this, width /2, height / 2);
     }
@@ -59,6 +61,7 @@ public class UI extends PApplet
 
         ro.render();
 
+        b2.render();
 
         if (checkKey(LEFT))
         {

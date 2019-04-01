@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Button
 {
@@ -11,7 +12,7 @@ public class Button
     private float height;
     private String text;
     private int i = 5;//starts on 5 to ensure that button turns on first time
-
+    PImage stars;
     
     
     public Button(UI ui, float x, float y, float width, float height, String text)
@@ -22,6 +23,7 @@ public class Button
         this.width = width;
         this.height = height;
         this.text = text;
+        stars = ui.loadImage("images/stars.png");
     }
 
     public void render() 
@@ -48,10 +50,17 @@ public class Button
         {
             //System.out.println(i);
             ui.fill(255);
-            ui.rect(x + 450 , y + 400, width + 100, height + 50);
+            ui.rect(x + 450, y + 400, width + 99, height + 49);
             ui.textAlign(PApplet.CENTER, PApplet.CENTER);
             ui.fill(0);
-            ui.text("Window", (x + 450) + (width + 100) * 0.5f, (y + 400) + (height + 50) * 0.5f);
+            ui.image(stars, x+450, y+400);
         }
+
+        ui.noFill();
+        ui.stroke(255);
+        ui.rect(x, y + 200, width + 150, height);
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(255);
+        ui.text("Right for Radar, Left for Weather", x + (width + 150) * 0.5f, (y + 200) + height * 0.5f);
     }
 }
