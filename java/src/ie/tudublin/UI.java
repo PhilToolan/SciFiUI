@@ -7,6 +7,7 @@ public class UI extends PApplet
     Button b;
     MovingCircle mc;
     Radar r;
+    Weather w;
 
     boolean[] keys = new boolean[1024];
 
@@ -38,6 +39,7 @@ public class UI extends PApplet
         b = new Button(this, 50, 50, 100, 50, "Draw rect");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         r = new Radar(this, width / 5, height / 5, 100);
+        w = new Weather(this, 700, 100, width / 8);
     }
 
     public void draw()
@@ -56,7 +58,7 @@ public class UI extends PApplet
 
         if (checkKey(LEFT))
         {
-            b.drawPieChart();
+            w.drawPieChart();
         }
 
         if (checkKey(RIGHT))
@@ -65,6 +67,12 @@ public class UI extends PApplet
             r.reset();
             r.update();
         }
+
+        if (checkKey(UP))
+        {
+
+        }
     }
+
 }
 

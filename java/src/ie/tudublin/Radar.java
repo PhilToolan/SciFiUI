@@ -27,8 +27,8 @@ public class Radar
     public void update()
     {
         angle += 0.01;
-        y1 += (radius * (Math.sin(angle)));
         x1 += (radius * (Math.cos(angle)));
+        y1 += (radius * (Math.sin(angle)));
        /* System.out.println((radius * (Math.sin(angle))));
         System.out.println((radius * (Math.cos(angle))));
         System.out.println(x1);
@@ -40,10 +40,13 @@ public class Radar
         ui.stroke(0, 204, 0);
         ui.noFill();
         ui.ellipse(x, y, diameter, diameter);
-        ui.ellipse(x, y, diameter / 2, diameter / 2);
-        ui.ellipse(x, y, diameter / 3, diameter / 3);
+        ui.ellipse(x, y, diameter - 40, diameter - 40);
+        ui.ellipse(x, y, diameter - 20, diameter - 20);
+        ui.ellipse(x, y, diameter - 60, diameter - 60);
+        //ui.ellipse(x, y, diameter - 80, diameter - 80);
         ui.fill(0, 204, 0);
         ui.line(x, y, x1, y1);
+        //ui.line(x + 20, y + 20, x + 20, y + 20 );
 
     }
 
