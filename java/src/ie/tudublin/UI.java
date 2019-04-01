@@ -37,11 +37,11 @@ public class UI extends PApplet
 
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "Open Blinds");
+        b = new Button(this, 50, 50, 100, 50, "Blinds");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         ra = new Radar(this, width / 5, height / 5, 100);
         w = new Weather(this, 700, 100, width / 8);
-        ro = new Room(this);
+        ro = new Room(this, width /2, height / 2);
     }
 
     public void draw()

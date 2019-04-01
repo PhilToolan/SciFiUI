@@ -37,6 +37,7 @@ public class Radar
 
     public void render()
     {
+        ui.strokeWeight(1);
         ui.stroke(0, 204, 0);//Green colour for the radar
         ui.noFill();
         ui.ellipse(x, y, diameter, diameter);//original circle for the radar

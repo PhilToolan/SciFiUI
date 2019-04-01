@@ -5,12 +5,15 @@ import processing.core.PApplet;
 public class Room
 {
     UI ui;
-    private float wall;
+    private float width;
+    private float height;
 
 
-    public Room(UI ui)
+    public Room(UI ui, float width, float height)
     {
         this.ui = ui;
+        this.width = width;
+        this.height = height;
     }
 
     public void render()
@@ -20,11 +23,11 @@ public class Room
 
         //Bed Frame
 
-        ui.strokeWeight(2);
+        ui.strokeWeight(3);
         ui.stroke(139,69,19);
         ui.fill(160,82,45);
         //first leg
-        ui.rect(450, 740, 20, 60);
+        ui.rect(450, 760, 20, 60);
         //ui.line(450, 800, 450, 700);
         //ui.line(470, 800, 470, 720);
         
@@ -40,11 +43,15 @@ public class Room
         ui.noStroke();
         ui.fill(255);
         //Mattress
-        ui.rect(460, 700, 340, 40);//x y width height
+        ui.rect(460, 700, 340, 40);
         //ui.line(460, 700, 460, 660);
         //ui.line(460, 660, 800, 660);
-        
+                
         //Pillow
         ui.ellipse(770, 690, 50, 20);
+
+        //Duvet
+        ui.fill(204, 0, 0);
+        ui.rect(460, 700, 285, 40);
     }
 }

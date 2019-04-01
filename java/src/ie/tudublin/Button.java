@@ -48,10 +48,10 @@ public class Button
         {
             //System.out.println(i);
             ui.fill(255);
-            ui.rect(x + 100 , y + 300, width + 50, height - 20);
+            ui.rect(x + 450 , y + 400, width + 100, height + 50);
             ui.textAlign(PApplet.CENTER, PApplet.CENTER);
             ui.fill(0);
-            ui.text("Rect", (x + 100) + (width + 50) * 0.5f, (y + 300) + (height - 20) * 0.5f);
+            ui.text("Window", (x + 450) + (width + 100) * 0.5f, (y + 400) + (height + 50) * 0.5f);
         }
     }
 }
