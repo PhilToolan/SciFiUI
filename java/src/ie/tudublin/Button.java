@@ -31,7 +31,7 @@ public class Button
         ui.strokeWeight(1);
         ui.fill(128, 111, 111);
         ui.rect(0, 0, 400, 800);
-        ui.noFill();
+        ui.fill(0);
         ui.stroke(255);
         ui.rect(x, y, width, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
@@ -58,7 +58,7 @@ public class Button
             ui.image(stars, x+450, y+400);
         }
 
-        ui.noFill();
+        ui.fill(0);
         ui.stroke(255);
         ui.rect(x, y + 200, width + 150, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);

@@ -10,6 +10,7 @@ public class UI extends PApplet
     Orbit o;
     Weather w;
     Room r;
+    Console c;
 
     boolean[] keys = new boolean[1024];
 
@@ -44,6 +45,7 @@ public class UI extends PApplet
         o = new Orbit(this, width / 8, height - 100, 100);
         w = new Weather(this, 300, height - 100, 100);
         r = new Room(this, width /2, height / 2);
+        c = new Console(this, 450, 600, 25, 50);
     }
 
     public void draw()
@@ -63,6 +65,8 @@ public class UI extends PApplet
         b2.render();
 
         r.render();
+
+        c.render();
 
 
 

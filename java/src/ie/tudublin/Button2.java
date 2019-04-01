@@ -27,7 +27,7 @@ public class Button2
     public void render() 
     {   
         ui.strokeWeight(1);
-        ui.noFill();
+        ui.fill(0);
         ui.stroke(255);
         ui.rect(x, y, width, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
@@ -52,7 +52,7 @@ public class Button2
             }
         } 
 
-        ui.fill(128, 111, 111);
+        ui.fill(0);
         ui.stroke(255);
         ui.rect(x - 150 , y + 100, width + 150, height);//Planet box
 
