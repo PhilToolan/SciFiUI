@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Radar
+public class Orbit
 {
     private float x;
     private float y;
@@ -13,7 +13,7 @@ public class Radar
     private float angle = 0;
     UI ui;
 
-    public Radar(UI ui, float x, float y, float diameter)
+    public Orbit(UI ui, float x, float y, float diameter)
     {
         this.ui = ui;
         this.x = x;
@@ -38,9 +38,11 @@ public class Radar
     public void render()
     {
         ui.strokeWeight(1);
+        /*
         ui.stroke(255);//Green colour for the radar
         ui.fill(0);
         ui.ellipse(x, y, diameter, diameter);//original circle for the radar
+        */
         //ui.ellipse(x, y, radius, radius);//additional circles for the radar
         //ui.ellipse(x, y, radius * (float) 1.5, radius * (float) 1.5);
         //ui.ellipse(x, y, radius * (float) 0.5, radius * (float) 0.5);

@@ -29,6 +29,8 @@ public class Button
     public void render() 
     {   
         ui.strokeWeight(1);
+        ui.fill(128, 111, 111);
+        ui.rect(0, 0, 400, 800);
         ui.noFill();
         ui.stroke(255);
         ui.rect(x, y, width, height);
@@ -61,6 +63,7 @@ public class Button
         ui.rect(x, y + 200, width + 150, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(255);
-        ui.text("Right for Radar, Left for Weather", x + (width + 150) * 0.5f, (y + 200) + height * 0.5f);
+        ui.text("Press right for Orbit, left for Weather", x + (width + 150) * 0.5f, (y + 200) + height * 0.5f);
+
     }
 }

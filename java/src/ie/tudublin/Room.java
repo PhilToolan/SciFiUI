@@ -18,7 +18,7 @@ public class Room
 
     public void render()
     {
-        ui.line(400, 800, 400, 0);//split screen
+        //ui.line(400, 0, 400, 800);//split screen
 
 
         //Bed Frame
