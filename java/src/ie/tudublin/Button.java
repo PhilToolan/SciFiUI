@@ -10,9 +10,15 @@ public class Button
     private float width;
     private float height;
     private String text;
+    //private float a = ui.random(0, 100);
+    /*
+    private float b = ui.random(20, 40);
+    private float c = ui.random(50, 85);
+    */
     private int i = 5;
-    float[] rainFall = {23, 42, 5, 79};
+    float[] rainFall = {20, 40, 20, 60};
 
+    
     
     public Button(UI ui, float x, float y, float width, float height, String text)
     {
@@ -75,6 +81,7 @@ public class Button
             float end = ui.map(next, 0, total, 0, PApplet.TWO_PI);
             ui.fill(ui.map(i, 0, rainFall.length, 0, 255), 255, 255);
             ui.arc(cx, cy, w, w, start, end, PApplet.ARC);
+            ui.text("Chance of Rainfall on Planet", cx - 10, cy + 50);
             runningSum = next;
         }
 

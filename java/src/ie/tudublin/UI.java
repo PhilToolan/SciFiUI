@@ -44,19 +44,26 @@ public class UI extends PApplet
     {
         background(0);
         b.render();
-        b.drawPieChart();
+        //b.drawPieChart();
 
         //mc.update();
         //mc.render();
 
-        r.render();
-        r.reset();
-        r.update();
+        //r.render();
+        //r.reset();
+        //r.update();
 
 
         if (checkKey(LEFT))
         {
-            
+            b.drawPieChart();
+        }
+
+        if (checkKey(RIGHT))
+        {
+            r.render();
+            r.reset();
+            r.update();
         }
     }
 }
