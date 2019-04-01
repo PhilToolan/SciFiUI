@@ -25,6 +25,7 @@ public class Weather
 
     void drawPieChart()
     {
+        ui.strokeWeight(1);
         float w = width * 0.8f;
         //arc(cx, cy, w, w, 0, TWO_PI, ARC);
         

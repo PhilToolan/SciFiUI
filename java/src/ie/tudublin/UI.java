@@ -6,8 +6,9 @@ public class UI extends PApplet
 {
     Button b;
     MovingCircle mc;
-    Radar r;
+    Radar ra;
     Weather w;
+    Room ro;
 
     boolean[] keys = new boolean[1024];
 
@@ -36,10 +37,11 @@ public class UI extends PApplet
 
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "Draw rect");
+        b = new Button(this, 50, 50, 100, 50, "Open Blinds");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
-        r = new Radar(this, width / 5, height / 5, 100);
+        ra = new Radar(this, width / 5, height / 5, 100);
         w = new Weather(this, 700, 100, width / 8);
+        ro = new Room(this);
     }
 
     public void draw()
@@ -55,6 +57,8 @@ public class UI extends PApplet
         //r.reset();
         //r.update();
 
+        ro.render();
+
 
         if (checkKey(LEFT))
         {
@@ -63,9 +67,9 @@ public class UI extends PApplet
 
         if (checkKey(RIGHT))
         {
-            r.render();
-            r.reset();
-            r.update();
+            ra.render();
+            ra.reset();
+            ra.update();
         }
 
         if (checkKey(UP))

@@ -22,6 +22,7 @@ public class MovingCircle
     
     public void render()
     {
+        ui.strokeWeight(1);
         ui.stroke(255);
         ui.noFill();
         ui.ellipse(x, y, diameter, diameter);

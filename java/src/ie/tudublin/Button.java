@@ -26,33 +26,32 @@ public class Button
 
     public void render() 
     {   
-            ui.noFill();
-            ui.stroke(255);
-            ui.rect(x, y, width, height);
-            ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-            ui.fill(255);
-            ui.text(text, x + width * 0.5f, y + height * 0.5f);
-            //need to make sure this only increments by one everytime
-            if(ui.mousePressed)
+        ui.strokeWeight(1);
+        ui.noFill();
+        ui.stroke(255);
+        ui.rect(x, y, width, height);
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(255);
+        ui.text(text, x + width * 0.5f, y + height * 0.5f);
+        //need to make sure this only increments by one everytime
+        if(ui.mousePressed)
+        {
+            if(ui.mouseX > x && ui.mouseX < x + width && ui.mouseY > y && ui.mouseY < y + height)
             {
-                if(ui.mouseX > x && ui.mouseX < x + width && ui.mouseY > y && ui.mouseY < y + height)
-                {
-                    i += 1;
-                    System.out.println(i);
-                    ui.delay(200);
-                }
-            } 
-
-            if((i % 2) == 0)
-            {
-                System.out.println(i);
-                ui.fill(255);
-                ui.rect(x + 100 , y + 300, width + 50, height - 20);
-                ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-                ui.fill(0);
-                ui.text("Rect", (x + 100) + (width + 50) * 0.5f, (y + 300) + (height - 20) * 0.5f);
+                i += 1;
+                //System.out.println(i);
+                ui.delay(200);//delays the button so that it cannot increment by more than one
             }
+        } 
 
+        if((i % 2) == 0)
+        {
+            //System.out.println(i);
+            ui.fill(255);
+            ui.rect(x + 100 , y + 300, width + 50, height - 20);
+            ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+            ui.fill(0);
+            ui.text("Rect", (x + 100) + (width + 50) * 0.5f, (y + 300) + (height - 20) * 0.5f);
+        }
     }
-    
 }

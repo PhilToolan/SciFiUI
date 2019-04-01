@@ -26,8 +26,8 @@ public class Radar
 
     public void update()
     {
-        angle += 0.01;
-        x1 += (radius * (Math.cos(angle)));
+        angle += 0.01;//determines the speed of the radar
+        x1 += (radius * (Math.cos(angle)));//to change the point around the circle of the radar
         y1 += (radius * (Math.sin(angle)));
        /* System.out.println((radius * (Math.sin(angle))));
         System.out.println((radius * (Math.cos(angle))));
@@ -37,22 +37,21 @@ public class Radar
 
     public void render()
     {
-        ui.stroke(0, 204, 0);
+        ui.stroke(0, 204, 0);//Green colour for the radar
         ui.noFill();
-        ui.ellipse(x, y, diameter, diameter);
-        ui.ellipse(x, y, diameter - 40, diameter - 40);
-        ui.ellipse(x, y, diameter - 20, diameter - 20);
-        ui.ellipse(x, y, diameter - 60, diameter - 60);
-        //ui.ellipse(x, y, diameter - 80, diameter - 80);
+        ui.ellipse(x, y, diameter, diameter);//original circle for the radar
+        ui.ellipse(x, y, radius, radius);//additional circles for the radar
+        ui.ellipse(x, y, radius * (float) 1.5, radius * (float) 1.5);
+        ui.ellipse(x, y, radius * (float) 0.5, radius * (float) 0.5);
         ui.fill(0, 204, 0);
-        ui.line(x, y, x1, y1);
+        ui.line(x, y, x1, y1);//line that rotates about the centre of the radar
         //ui.line(x + 20, y + 20, x + 20, y + 20 );
 
     }
 
     public void reset()
     {
-        x1 = x;
+        x1 = x;//resets x1 and y1 so that the line does not grow bigger than the radar
         y1 = y;
     }
 }
