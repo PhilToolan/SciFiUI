@@ -8,9 +8,12 @@ public class Button
     UI ui;
     private float x;
     private float y;
+    private float x1;
+    private float y1;
     private float width;
     private float height;
     private String text;
+    private float speed = 1;
     private int i = 5;//starts on 5 to ensure that button turns on first time
     PImage stars;
     
@@ -24,6 +27,8 @@ public class Button
         this.height = height;
         this.text = text;
         stars = ui.loadImage("images/stars.png");
+        x1 = x + 450;
+        y1 = y + 300;
     }
 
     public void render() 
@@ -37,6 +42,9 @@ public class Button
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(255);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
+        ui.fill(255);
+        ui.noStroke();
+        ui.rect(x1, y1, width + 99, height + 49);
         //need to make sure this only increments by one everytime
         if(ui.mousePressed)
         {
@@ -52,11 +60,11 @@ public class Button
         {
             //System.out.println(i);
             ui.fill(255);
-            ui.rect(x + 450, y + 400, width + 99, height + 49);
             ui.textAlign(PApplet.CENTER, PApplet.CENTER);
             ui.fill(0);
-            ui.image(stars, x+450, y+400);
+            ui.image(stars, x1, y+400);
         }
+
 
         ui.fill(0);
         ui.stroke(255);
@@ -65,5 +73,23 @@ public class Button
         ui.fill(255);
         ui.text("Press right for Orbit, left for Weather", x + (width + 150) * 0.5f, (y + 200) + height * 0.5f);
 
+    }
+
+    public void update()
+    {
+        if((i % 2) == 0)
+        {
+            y1 += speed;
+        }
+
+        if((i % 2) != 0)
+        {
+            y1 -= speed;
+        }
+
+        if(y1 == y + 400)
+        {
+            speed = 0;
+        }
     }
 }
