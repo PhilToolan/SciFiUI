@@ -51,6 +51,9 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
+
+        b2.render();
+
         b.render();
         b.update();
         //b.drawPieChart();
@@ -62,8 +65,6 @@ public class UI extends PApplet
         //r.reset();
         //r.update();
 
-
-        b2.render();
 
         r.render();
 

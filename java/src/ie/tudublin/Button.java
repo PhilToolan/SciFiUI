@@ -14,8 +14,7 @@ public class Button
     private float height;
     private String text;
     private float speed = 1;
-    private int i = 5;//starts on 5 to ensure that button turns on first time
-    PImage stars;
+    private int i = 4;//starts on 5 to ensure that button turns on first time
     
     
     public Button(UI ui, float x, float y, float width, float height, String text)
@@ -25,8 +24,7 @@ public class Button
         this.y = y;
         this.width = width;
         this.height = height;
-        this.text = text;
-        stars = ui.loadImage("images/stars.png");
+        this.text = text;  
         x1 = x + 450;
         y1 = y + 300;
     }
@@ -34,17 +32,17 @@ public class Button
     public void render() 
     {   
         ui.strokeWeight(1);
-        ui.fill(128, 111, 111);
-        ui.rect(0, 0, 400, 800);
+        //ui.fill(128, 111, 111);
+        //ui.rect(0, 0, 400, 800);
         ui.fill(0);
         ui.stroke(255);
         ui.rect(x, y, width, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(255);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
-        ui.fill(255);
+        ui.fill(0);
         ui.noStroke();
-        ui.rect(x1, y1, width + 99, height + 49);
+        ui.rect(x1, y1, width + 100, height + 51);
         //need to make sure this only increments by one everytime
         if(ui.mousePressed)
         {
@@ -56,16 +54,7 @@ public class Button
             }
         } 
 
-        if((i % 2) == 0)
-        {
-            //System.out.println(i);
-            ui.fill(255);
-            ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-            ui.fill(0);
-            ui.image(stars, x1, y+400);
-        }
-
-
+        //insturctions for orbit and weather
         ui.fill(0);
         ui.stroke(255);
         ui.rect(x, y + 200, width + 150, height);
@@ -89,7 +78,12 @@ public class Button
 
         if(y1 == y + 400)
         {
-            speed = 0;
+            y1 -= speed;
+        }
+
+        if(y1 == y + 300)
+        {
+            y1 += speed;
         }
     }
 }
