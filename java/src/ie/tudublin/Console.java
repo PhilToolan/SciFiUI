@@ -21,7 +21,7 @@ public class Console
 
     public void render()
     {
-        ui.fill(128, 111, 111);
+        ui.fill(128, 0, 0);
         ui.rect(x, y, width, height);
         ui.fill(0);
         ui.rect(x + 3, y + 10, width / 3, height / 6);

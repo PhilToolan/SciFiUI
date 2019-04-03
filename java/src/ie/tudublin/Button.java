@@ -34,7 +34,7 @@ public class Button
         ui.strokeWeight(1);
         //ui.fill(128, 111, 111);
         //ui.rect(0, 0, 400, 800);
-        ui.fill(0);
+        ui.fill(255,215,0);
         ui.stroke(255);
         ui.rect(x, y, width, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
@@ -42,7 +42,7 @@ public class Button
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
         ui.fill(0);
         ui.noStroke();
-        ui.rect(x1, y1, width + 100, height + 51);
+        ui.rect(x1, y1, width + 100, height + 51);//Blinds
         //need to make sure this only increments by one everytime
         if(ui.mousePressed)
         {
@@ -55,8 +55,8 @@ public class Button
         } 
 
         //insturctions for orbit and weather
-        ui.fill(0);
-        ui.stroke(255);
+        ui.fill(255,215,0);
+        ui.noStroke();
         ui.rect(x, y + 200, width + 150, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(255);

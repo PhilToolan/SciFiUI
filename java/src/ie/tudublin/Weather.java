@@ -10,7 +10,7 @@ public class Weather
     private float b = ui.random(20, 40);
     private float c = ui.random(50, 85);
     */
-    float[] rainFall = {20, 40, 20, 60};
+    float[] rainFall = {20, 40, 80, 60};
     private float width;
     private float cx;
     private float cy;
@@ -43,7 +43,7 @@ public class Weather
             float end = ui.map(next, 0, total, 0, PApplet.TWO_PI);
             ui.fill(ui.map(i, 0, rainFall.length, 0, 255), 255, 255);
             ui.arc(cx, cy, w, w, start, end, PApplet.ARC);
-            ui.text("Chance of Rainfall on Planet", cx - 10, cy + 50);
+            ui.text("Last 4 Days of Rainfall on Planet", cx - 10, cy + 50);
             runningSum = next;
         }
 

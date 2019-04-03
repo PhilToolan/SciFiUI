@@ -30,9 +30,9 @@ public class Button2
     public void render() 
     {   
         ui.strokeWeight(1);
-        ui.fill(128, 111, 111);//colour of console
+        ui.fill(128, 0, 0);//colour of console
         ui.rect(0, 0, 400, 800);//Life size console
-        ui.fill(0);
+        ui.fill(255,215,0);
         ui.stroke(255);
         ui.rect(x, y, width, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
@@ -57,8 +57,8 @@ public class Button2
             }
         } 
 
-        ui.fill(0);
-        ui.stroke(255);
+        ui.fill(255,215,0);
+        ui.noStroke();
         ui.rect(x - 150 , y + 100, width + 150, height);//Planet box
 
         //Planet diagram
