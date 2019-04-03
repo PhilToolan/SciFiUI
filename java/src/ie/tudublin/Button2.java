@@ -12,7 +12,7 @@ public class Button2
     private float height;
     private String text;
     private int location = 0;
-    String[] planets = {"First Planet", "Second Planet", "Third Planet", "Fourth Planet" };
+    String[] planets = {"Bray", "Jumanji", "Chatsky", "Qatar" };
     PImage stars;
 
     
@@ -66,37 +66,37 @@ public class Button2
         {
             ui.fill(19, 77, 164);
             ui.ellipse(ui.width / 8, ui.height - 100, 100, 100);
-            ui.fill(255);
-            ui.textAlign(PApplet.CENTER, PApplet.CENTER);
             ui.fill(0);
             ui.image(stars, x + 300, y + 400);
+            ui.fill(19, 77, 164);
+            ui.ellipse( x + 350, y + 430, 50, 50);
         } else 
         if(location == 1)
         {
             ui.fill(44, 158, 74);
             ui.ellipse(ui.width / 8, ui.height - 100, 100, 100);
-            ui.fill(255);
-            ui.textAlign(PApplet.CENTER, PApplet.CENTER);
             ui.fill(0);
             ui.image(stars, x + 300, y + 400);
+            ui.fill(44, 158, 74);
+            ui.ellipse( x + 400, y + 450, 50, 50);
         } else
         if(location == 2)
         {
             ui.fill(215, 169, 78);
             ui.ellipse(ui.width / 8, ui.height - 100, 100, 100);
-            ui.fill(255);
-            ui.textAlign(PApplet.CENTER, PApplet.CENTER);
             ui.fill(0);
             ui.image(stars, x + 300, y + 400);
+            ui.fill(215, 169, 78);
+            ui.ellipse( x + 350, y + 470, 50, 50);
         } else
         if(location == 3)
         {
             ui.fill(242, 66, 54);
             ui.ellipse(ui.width / 8, ui.height - 100, 100, 100);
-            ui.fill(255);
-            ui.textAlign(PApplet.CENTER, PApplet.CENTER);
             ui.fill(0);
             ui.image(stars, x + 300, y + 400);
+            ui.fill(242, 66, 54);
+            ui.ellipse( x + 450, y + 450, 50, 50);
         }
 
 

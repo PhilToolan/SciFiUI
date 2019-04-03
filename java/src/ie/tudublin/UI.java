@@ -44,7 +44,7 @@ public class UI extends PApplet
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         o = new Orbit(this, width / 8, height - 100, 100);
         w = new Weather(this, 300, height - 100, 100);
-        r = new Room(this, width /2, height / 2);
+        r = new Room(this, width / 2, height / 2);
         c = new Console(this, 450, 600, 25, 50);
     }
 
