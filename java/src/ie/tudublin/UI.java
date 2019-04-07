@@ -11,6 +11,7 @@ public class UI extends PApplet
     Weather w;
     Room r;
     Console c;
+    Cockpit cp;
 
     boolean[] keys = new boolean[1024];
 
@@ -44,8 +45,9 @@ public class UI extends PApplet
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         o = new Orbit(this, width / 8, height - 100, 100);
         w = new Weather(this, 300, height - 100, 100);
-        r = new Room(this, width / 2, height / 2);
+        r = new Room(this, width, height / 2);
         c = new Console(this, 450, 600, 25, 50);
+        cp = new Cockpit(this, width, height);
     }
 
     public void draw()
@@ -85,6 +87,11 @@ public class UI extends PApplet
         }
 
         if (checkKey(UP))
+        {
+            cp.render();
+        }
+
+        if(checkKey(DOWN))
         {
 
         }
