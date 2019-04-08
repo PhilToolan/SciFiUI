@@ -33,9 +33,9 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        //size(800, 800);
         // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(); 
+        fullScreen(); 
     }
 
     public void setup()
@@ -47,7 +47,7 @@ public class UI extends PApplet
         w = new Weather(this, 300, height - 100, 100);
         r = new Room(this, width, height / 2);
         c = new Console(this, 450, 600, 25, 50);
-        cp = new Cockpit(this, width, height);
+        cp = new Cockpit(this, width - 400, height / 2);
     }
 
     public void draw()
