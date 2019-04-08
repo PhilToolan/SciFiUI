@@ -89,6 +89,7 @@ public class UI extends PApplet
         if (checkKey(UP))
         {
             cp.render();
+			cp.update();
         }
 
         if(checkKey(DOWN))
