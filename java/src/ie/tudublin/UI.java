@@ -33,9 +33,9 @@ public class UI extends PApplet
 
     public void settings()
     {
-        size(800, 800);
+        //size(800, 800);
         // Use fullscreen instead of size to make your interface fullscreen
-        //fullScreen(); 
+        fullScreen(); 
     }
 
     public void setup()
@@ -72,6 +72,8 @@ public class UI extends PApplet
 
         c.render();
 
+        cp.render();
+        cp.update();
 
 
         if (checkKey(LEFT))
@@ -88,8 +90,7 @@ public class UI extends PApplet
 
         if (checkKey(UP))
         {
-            cp.render();
-			cp.update();
+           
         }
 
         if(checkKey(DOWN))
