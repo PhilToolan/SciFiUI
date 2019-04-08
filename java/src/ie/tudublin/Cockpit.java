@@ -9,14 +9,14 @@ public class Cockpit
     private float height;
 	private float fat = 3;
 	private float tall = 3;
-	private float[] xl = new float [500];
-	private float[] yl = new float [500];
-	private float[] xul = new float [500];
-	private float[] yul = new float [500];
-	private float[] xr = new float [500];
-	private float[] yr = new float [500];
-	private float[] xur = new float [500];
-	private float[] yur = new float [500];
+	private float[] xl = new float [600];
+	private float[] yl = new float [600];
+	private float[] xul = new float [600];
+	private float[] yul = new float [600];
+	private float[] xr = new float [600];
+	private float[] yr = new float [600];
+	private float[] xur = new float [600];
+	private float[] yur = new float [600];
 	private int i = 0;
 
     public Cockpit(UI ui, float width, float height)
@@ -31,26 +31,31 @@ public class Cockpit
         ui.fill(0);
         ui.rect(400, 0, width / 2, height);
 		ui.fill(255);
-		while(i < 500)
+		while(i < 600)
 		{
 			
 			xl[i] = ui.random(415, 400 + (width / 4));
-			yl[i] = ui.random(15, height - 15);
+			yl[i] = ui.random(height / 2, height - 15);
 			xr[i] = ui.random(400 + (width / 4), 400 + (width / 2) - 15);
-			yr[i] = ui.random(15, height - 15);
-			xl[i] = ui.random(415, 400 + (width / 4));
-			yl[i] = ui.random(15, height - 15);
-			xr[i] = ui.random(400 + (width / 4), 400 + (width / 2) - 15);
-			yr[i] = ui.random(15, height - 15);
+			yr[i] = ui.random(height / 2, height - 15);
+			xul[i] = ui.random(415, 400 + (width / 4));
+			yul[i] = ui.random(15, height / 2);
+			xur[i] = ui.random(400 + (width / 4), 400 + (width / 2) - 15);
+			yur[i] = ui.random(15, height / 2);
 			i += 1;
 		}
 		i = 0;
-		while(i < 500)
+		while(i < 600)
 		{
 			ui.ellipse(xl[i], yl[i], fat, tall);
 			ui.ellipse(xr[i], yr[i], fat, tall);
+			ui.ellipse(xul[i], yul[i], fat, tall);
+			ui.ellipse(xur[i], yur[i], fat, tall);
 			i += 1;
 		}
+		
+		ui.fill(192,192,192);
+		ui.rect(400, height - (height / 4), width / 2, height / 3.5f);
 	}
 
 	public void update()
@@ -70,20 +75,39 @@ public class Cockpit
 		}
 		*/
 		i = 0;
-		while(i < 500)
+		while(i < 600)
 		{
-			if(xl[i] <= 400)
+			if(xl[i] <= 415 || yl[i] >= height + 15)
 			{
-				xl[i] = ui.random(350 + (width / 4), 400 + (width / 4));
+				xl[i] = ui.random(415, 400 + (width / 4));
+				yl[i] = ui.random(height / 2, height - 15);
 			}
-			xl[i] -= 1;
+			xl[i] -= 3;
+			yl[i] += 3;
+			
+			if(xr[i] >= 800 + (width / 4) || yr[i] >= height + 15)
+			{
+				xr[i] = ui.random(400 + (width / 4), 400 + (width / 2) - 15);
+				yr[i] = ui.random(height / 2, height - 15);
+			}
+			xr[i] += 3;
+			yr[i] += 3;
+			if(xul[i] <= 415)
+			{
+				xul[i] = ui.random(415, 400 + (width / 4));
+				yul[i] = ui.random(15, height / 2);
+			}
+			xul[i] -= 3;
+			yul[i] -= 3;
 			
 			
-			if(xr[i] >= 815 + (width / 4))
+			if(xur[i] >= 800 + (width / 4))
 			{
-				xr[i] = ui.random(400 + (width / 4), 450 + (width / 4));
+				xur[i] = ui.random(400 + (width / 4), 400 + (width / 2) - 15);
+				yur[i] = ui.random(15, height / 2);
 			}
-			xr[i] += 1;
+			xur[i] += 3;
+			yur[i] -= 3;
 			i++;
 		}
 	}
