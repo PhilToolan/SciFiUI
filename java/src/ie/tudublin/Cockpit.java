@@ -85,14 +85,14 @@ public class Cockpit
 			xl[i] -= 3;
 			yl[i] += 3;
 			
-			if(xr[i] >= 800 + (width / 4) || yr[i] >= height + 15)
+			if(xr[i] >= width || yr[i] >= height + 15)
 			{
 				xr[i] = ui.random(400 + (width / 4), 400 + (width / 2) - 15);
 				yr[i] = ui.random(height / 2, height - 15);
 			}
 			xr[i] += 3;
 			yr[i] += 3;
-			if(xul[i] <= 415)
+			if(xul[i] <= 415 || yul[i] <= 0)
 			{
 				xul[i] = ui.random(415, 400 + (width / 4));
 				yul[i] = ui.random(15, height / 2);
@@ -101,7 +101,7 @@ public class Cockpit
 			yul[i] -= 3;
 			
 			
-			if(xur[i] >= 800 + (width / 4))
+			if(xur[i] >= width || yur[i] <= 0)
 			{
 				xur[i] = ui.random(400 + (width / 4), 400 + (width / 2) - 15);
 				yur[i] = ui.random(15, height / 2);
