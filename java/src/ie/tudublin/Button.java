@@ -14,7 +14,9 @@ public class Button
     private float height;
     private String text;
     private float speed = 1;
-    private int i = 4;//starts on 5 to ensure that button turns on first time
+    private int i = 5;//starts on 5 to ensure that button turns on first time
+    private float maxH;
+    private float minH;
     
     
     public Button(UI ui, float x, float y, float width, float height, String text)
@@ -25,8 +27,10 @@ public class Button
         this.width = width;
         this.height = height;
         this.text = text;  
-        x1 = x + 450;
-        y1 = y + 300;
+        x1 = ui.width - ((ui.width - 400) / 4);
+        y1 = ui.height / 2;
+        maxH = (ui.height / 2) + ((height + 51) * 2);
+        minH = (ui.height / 2) - (height + 51);
     }
 
     public void render() 
@@ -40,7 +44,7 @@ public class Button
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(255);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
-        ui.fill(0);
+        ui.fill(255);
         ui.noStroke();
         ui.rect(x1, y1, width + 100, height + 51);//Blinds
         //need to make sure this only increments by one everytime
@@ -76,14 +80,14 @@ public class Button
             y1 -= speed;
         }
 
-        if(y1 == y + 400)
-        {
-            y1 -= speed;
-        }
-
-        if(y1 == y + 300)
+        if(y1 == maxH)
         {
             y1 += speed;
+        }
+
+        if(y1 == minH)
+        {
+            y1 -= speed;
         }
     }
 }

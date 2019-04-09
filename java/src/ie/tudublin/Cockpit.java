@@ -18,7 +18,7 @@ public class Cockpit
 	private float[] xur = new float [200];
 	private float[] yur = new float [200];
 	private int i = 0;
-	private int counter = 5;
+	private int counter = 6;
 	private float a = 400;
 	private float b = height - (height / 6);
 
@@ -36,19 +36,19 @@ public class Cockpit
 		ui.stroke(255);
         ui.rect(400, 0, width / 2, height);
 		ui.fill(255);
-		while(i < 200)
-		{
+		// while(i < 200)
+		// {
 			
-			xl[i] = ui.random(415, 400 + (width / 2) / 2);
-			yl[i] = ui.random(height / 2, height - 15);
-			xr[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2));
-			yr[i] = ui.random(height / 2, height - 15);
-			xul[i] = ui.random(415, 400 + (width / 2) / 2);
-			yul[i] = ui.random(15, height / 2);
-			xur[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2));
-			yur[i] = ui.random(15, height / 2);
-			i += 1;
-		}
+		// 	xl[i] = ui.random(415, 400 + (width / 2) / 2);
+		// 	yl[i] = ui.random(height / 2, height - 15);
+		// 	xr[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2));
+		// 	yr[i] = ui.random(height / 2, height - 15);
+		// 	xul[i] = ui.random(415, 400 + (width / 2) / 2);
+		// 	yul[i] = ui.random(15, height / 2);
+		// 	xur[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2));
+		// 	yur[i] = ui.random(15, height / 2);
+		// 	i += 1;
+		// }
 		i = 0;
 		while(i < 200)
 		{
@@ -111,8 +111,8 @@ public class Cockpit
 				xr[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2) - 15);
 				yr[i] = ui.random(height / 2, height - 15);
 			}
-			xr[i] += 1;
-			yr[i] += 1;
+			xr[i] += 3;
+			yr[i] += 3;
 			if(xul[i] <= 415 || yul[i] <= 0)
 			{
 				xul[i] = ui.random(415, 400 + (width / 2) / 2);
@@ -127,10 +127,49 @@ public class Cockpit
 				xur[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2) - 15);
 				yur[i] = ui.random(15, height / 2);
 			}
-			xur[i] += 1;
-			yur[i] -= 1;
+			xur[i] += 3;
+			yur[i] -= 3;
 			i++;
 		}
+		}
+
+		if((counter % 2 != 0))
+		{
+			while(i < 200)
+			{
+				if(xl[i] <= 415 || yl[i] >= height - 15)
+				{
+					xl[i] = ui.random(415, 400 + (width / 2) / 2);
+					yl[i] = ui.random(height / 2, height - 15);
+				}
+				xl[i] -= 0.005f;
+				yl[i] += 0.005f;
+				
+				if(xr[i] >= 400 + (width / 2) || yr[i] >= height - 15)
+				{
+					xr[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2) - 15);
+					yr[i] = ui.random(height / 2, height - 15);
+				}
+				xr[i] += 0.005f;
+				yr[i] += 0.005f;
+				if(xul[i] <= 415 || yul[i] <= 0)
+				{
+					xul[i] = ui.random(415, 400 + (width / 2) / 2);
+					yul[i] = ui.random(15, height / 2);
+				}
+				xul[i] -= 0.005f;
+				yul[i] -= 0.005f;
+				
+				
+				if(xur[i] >= 400 + (width / 2)  || yur[i] <= 0)
+				{
+					xur[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2) - 15);
+					yur[i] = ui.random(15, height / 2);
+				}
+				xur[i] += 0.005f;
+				yur[i] -= 0.005f;
+				i++;
+			}
 		}
 		
 	}

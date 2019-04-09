@@ -67,7 +67,7 @@ public class Button2
             ui.fill(19, 77, 164);
             ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
             ui.fill(0);
-            ui.image(stars, x + 300, y + 400);
+            ui.image(stars, ui.width - ((ui.width - 400) / 4),ui.height / 2);
             ui.fill(19, 77, 164);
             ui.ellipse( x + 350, y + 430, 50, 50);
         } else 
@@ -76,7 +76,7 @@ public class Button2
             ui.fill(44, 158, 74);
             ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
             ui.fill(0);
-            ui.image(stars, x + 300, y + 400);
+            ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
             ui.fill(44, 158, 74);
             ui.ellipse( x + 400, y + 450, 50, 50);
         } else
@@ -85,7 +85,7 @@ public class Button2
             ui.fill(215, 169, 78);
             ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
             ui.fill(0);
-            ui.image(stars, x + 300, y + 400);
+            ui.image(stars,  ui.width - ((ui.width - 400) / 4),ui.height / 2);
             ui.fill(215, 169, 78);
             ui.ellipse( x + 350, y + 470, 50, 50);
         } else
@@ -94,7 +94,7 @@ public class Button2
             ui.fill(242, 66, 54);
             ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
             ui.fill(0);
-            ui.image(stars, x + 300, y + 400);
+            ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
             ui.fill(242, 66, 54);
             ui.ellipse( x + 450, y + 450, 50, 50);
         }
