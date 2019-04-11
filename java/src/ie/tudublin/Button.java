@@ -29,7 +29,7 @@ public class Button
         this.text = text;  
         x1 = ui.width - ((ui.width - 400) / 4);
         y1 = ui.height / 2;
-        maxH = (ui.height / 2) + ((height + 51) * 2);
+        maxH = (ui.height / 2);
         minH = (ui.height / 2) - (height + 51);
     }
 
@@ -80,12 +80,12 @@ public class Button
             y1 -= speed;
         }
 
-        if(y1 == maxH)
+        if(y1 == minH)
         {
             y1 += speed;
         }
 
-        if(y1 == minH)
+        if(y1 == maxH)
         {
             y1 -= speed;
         }
