@@ -55,6 +55,7 @@ public class UI extends PApplet
         background(0);
 
         b2.render();
+        b2.update();
 
         b.render();
         b.update();

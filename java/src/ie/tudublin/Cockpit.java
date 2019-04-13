@@ -18,7 +18,7 @@ public class Cockpit
 	private float[] xur = new float [200];
 	private float[] yur = new float [200];
 	private int i = 0;
-	private int counter = 6;
+	private int counter = 5;
 	private float a = 400;
 	private float b = height - (height / 6);
 
@@ -36,19 +36,19 @@ public class Cockpit
 		ui.stroke(255);
         ui.rect(400, 0, width / 2, height);
 		ui.fill(255);
-		// while(i < 200)
-		// {
+		while(i < 200)
+		{
 			
-		// 	xl[i] = ui.random(415, 400 + (width / 2) / 2);
-		// 	yl[i] = ui.random(height / 2, height - 15);
-		// 	xr[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2));
-		// 	yr[i] = ui.random(height / 2, height - 15);
-		// 	xul[i] = ui.random(415, 400 + (width / 2) / 2);
-		// 	yul[i] = ui.random(15, height / 2);
-		// 	xur[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2));
-		// 	yur[i] = ui.random(15, height / 2);
-		// 	i += 1;
-		// }
+			xl[i] = ui.random(415, 400 + (width / 2) / 2);
+			yl[i] = ui.random(height / 2, height - 15);
+			xr[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2));
+			yr[i] = ui.random(height / 2, height - 15);
+			xul[i] = ui.random(415, 400 + (width / 2) / 2);
+			yul[i] = ui.random(15, height / 2);
+			xur[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2));
+			yur[i] = ui.random(15, height / 2);
+			i += 1;
+		}
 		i = 0;
 		while(i < 200)
 		{
@@ -63,6 +63,8 @@ public class Cockpit
 		ui.rect(400, height - (height / 4), width / 2, height / 3.5f);
 		ui.fill(0);
 		ui.rect(400, height - (height / 6), (width / 2) / 4, height / 10);
+		ui.fill(255);
+		ui.text("Warp Drive", 400 + ((width/2)/4) * 0.5f, (height - (height / 6)) + (height / 10) * 0.5f);
 
 		if(ui.mousePressed)
         {
