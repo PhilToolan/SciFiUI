@@ -163,46 +163,38 @@ public class Cockpit
 				xur[i] += 0.005f;
 				yur[i] -= 0.005f;
 				i++;
-				 //Planet diagram
+				 //Planets
 				 if(location == 0)
 				 {
 					 ui.fill(19, 77, 164);
-					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
-					 // ui.fill(0);
-					 // ui.image(stars, ui.width - ((ui.width - 400) / 4),ui.height / 2);
+					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);//diagram
 					 ui.fill(19, 77, 164);
-					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
+					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);//window
 				 } else 
 				 if(location == 1)
 				 {
 					 ui.fill(44, 158, 74);
-					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
-					 // ui.fill(0);
-					 // ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
+					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);//diagram
 					 ui.fill(44, 158, 74);
-					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
+					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);//window
 				 } else
 				 if(location == 2)
 				 {
 					 ui.fill(215, 169, 78);
-					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
-					 // ui.fill(0);
-					 // ui.image(stars,  ui.width - ((ui.width - 400) / 4),ui.height / 2);
+					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);//diagram
 					 ui.fill(215, 169, 78);
-					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
+					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);//window
 				 } else
 				 if(location == 3)
 				 {
 					 ui.fill(242, 66, 54);
-					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
-					 // ui.fill(0);
-					 // ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
+					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);//diagram
 					 ui.fill(242, 66, 54);
-					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
+					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);//window
 				 }
 				ui.noStroke();
 				ui.fill(255,0,0);
-				ui.ellipse((385 + (width / 2) / 4), height - (height / 6) + 10, 5, 5);
+				ui.ellipse((385 + (width / 2) / 4), height - (height / 6) + 10, 5, 5);//Light on button
 			}
 		}
 		

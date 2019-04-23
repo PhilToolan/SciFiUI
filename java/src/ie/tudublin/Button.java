@@ -44,7 +44,7 @@ public class Button
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(255);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
-        ui.fill(255);
+        ui.fill(0);
         ui.noStroke();
         ui.rect(x1, y1, width + 100, height + 51);//Blinds
         //need to make sure this only increments by one everytime
