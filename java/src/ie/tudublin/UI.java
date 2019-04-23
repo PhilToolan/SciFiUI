@@ -11,6 +11,7 @@ public class UI extends PApplet
     Room r;
     Console c;
     Cockpit cp;
+    Hanger h;
 
     boolean[] keys = new boolean[1024];
 
@@ -46,6 +47,7 @@ public class UI extends PApplet
         r = new Room(this, width, height / 2);
         c = new Console(this, 450, 600, 25, 50);
         cp = new Cockpit(this, width - 400, height / 2);
+        h = new Hanger(this, width - 400, height / 2);
     }
 
     public void draw()
@@ -55,6 +57,9 @@ public class UI extends PApplet
         b2.render();
         b2.update();
 
+        cp.render();
+        cp.update();
+        
         b.render();
         b.update();
 
@@ -65,9 +70,6 @@ public class UI extends PApplet
         r.render();
 
         c.render();
-
-        cp.render();
-        cp.update();
 
 
         if (checkKey(LEFT))

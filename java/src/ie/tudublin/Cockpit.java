@@ -19,8 +19,7 @@ public class Cockpit
 	private float[] yur = new float [200];
 	private int i = 0;
 	private int counter = 5;
-	private float a = 400;
-	private float b = height - (height / 6);
+	private float location = 0;
 
 
     public Cockpit(UI ui, float width, float height)
@@ -70,10 +69,15 @@ public class Cockpit
         {
             if(ui.mouseX > 400 && ui.mouseX < 400 + ((width / 2) / 4) && ui.mouseY > height - (height / 6) && ui.mouseY < (height - (height / 6))+ (height / 10))
             {
-            	counter += 1;
+				counter += 1;
+				location += 0.5;
                 //System.out.println(i);
 				ui.delay(200);//delays the button so that it cannot increment by more than one
 				//System.out.print(counter);
+				if (location == 4)
+				{
+					location = 0;
+				}
             }
         } 
 	}
@@ -159,6 +163,43 @@ public class Cockpit
 				xur[i] += 0.005f;
 				yur[i] -= 0.005f;
 				i++;
+				 //Planet diagram
+				 if(location == 0)
+				 {
+					 ui.fill(19, 77, 164);
+					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
+					 // ui.fill(0);
+					 // ui.image(stars, ui.width - ((ui.width - 400) / 4),ui.height / 2);
+					 ui.fill(19, 77, 164);
+					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
+				 } else 
+				 if(location == 1)
+				 {
+					 ui.fill(44, 158, 74);
+					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
+					 // ui.fill(0);
+					 // ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
+					 ui.fill(44, 158, 74);
+					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
+				 } else
+				 if(location == 2)
+				 {
+					 ui.fill(215, 169, 78);
+					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
+					 // ui.fill(0);
+					 // ui.image(stars,  ui.width - ((ui.width - 400) / 4),ui.height / 2);
+					 ui.fill(215, 169, 78);
+					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
+				 } else
+				 if(location == 3)
+				 {
+					 ui.fill(242, 66, 54);
+					 ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
+					 // ui.fill(0);
+					 // ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
+					 ui.fill(242, 66, 54);
+					 ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
+				 }
 				ui.noStroke();
 				ui.fill(255,0,0);
 				ui.ellipse((385 + (width / 2) / 4), height - (height / 6) + 10, 5, 5);
