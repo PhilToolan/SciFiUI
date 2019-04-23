@@ -36,7 +36,7 @@ public class Button2
         ui.rect(0, 0, 400, ui.height);//Life size console
         ui.fill(255,215,0);
         ui.stroke(255);
-        ui.rect(x, y, width, height);
+        ui.rect(x, y, width, height);//button
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(255);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);

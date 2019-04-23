@@ -117,6 +117,9 @@ public class Cockpit
 			xur[i] += 3;
 			yur[i] -= 3;
 			i++;
+			ui.noStroke();
+			ui.fill(124,252,0);
+			ui.ellipse((385 + (width / 2) / 4), height - (height / 6) + 10, 5, 5);
 		}
 		}
 
@@ -156,6 +159,9 @@ public class Cockpit
 				xur[i] += 0.005f;
 				yur[i] -= 0.005f;
 				i++;
+				ui.noStroke();
+				ui.fill(255,0,0);
+				ui.ellipse((385 + (width / 2) / 4), height - (height / 6) + 10, 5, 5);
 			}
 		}
 		

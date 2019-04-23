@@ -8,7 +8,6 @@ public class UI extends PApplet
     Button2 b2;
     MovingCircle mc;
     Orbit o;
-    Weather w;
     Room r;
     Console c;
     Cockpit cp;
@@ -44,7 +43,6 @@ public class UI extends PApplet
         b2 = new Button2(this, 200, 50, 100, 50, "Travel");
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         o = new Orbit(this, width / 8, height - 100, 100);
-        w = new Weather(this, 300, height - 100, 100);
         r = new Room(this, width, height / 2);
         c = new Console(this, 450, 600, 25, 50);
         cp = new Cockpit(this, width - 400, height / 2);
@@ -59,14 +57,9 @@ public class UI extends PApplet
 
         b.render();
         b.update();
-        //b.drawPieChart();
 
         //mc.update();
         //mc.render();
-
-        //r.render();
-        //r.reset();
-        //r.update();
 
 
         r.render();
@@ -79,7 +72,7 @@ public class UI extends PApplet
 
         if (checkKey(LEFT))
         {
-            w.drawPieChart();
+        
         }
 
         if (checkKey(RIGHT))

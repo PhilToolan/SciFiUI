@@ -40,7 +40,7 @@ public class Button
         //ui.rect(0, 0, 400, 800);
         ui.fill(255,215,0);
         ui.stroke(255);
-        ui.rect(x, y, width, height);
+        ui.rect(x, y, width, height);//button
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(255);
         ui.text(text, x + width * 0.5f, y + height * 0.5f);
@@ -73,11 +73,17 @@ public class Button
         if((i % 2) == 0)
         {
             y1 += speed;
+            ui.noStroke();
+			ui.fill(124,252,0);
+			ui.ellipse(x + width - 10, y + 10, 5, 5);
         }
 
         if((i % 2) != 0)
         {
             y1 -= speed;
+            ui.noStroke();
+			ui.fill(255, 0, 0);
+			ui.ellipse(x + width - 10, y + 10, 5, 5);
         }
 
         if(y1 == minH)
