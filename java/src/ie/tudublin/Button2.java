@@ -13,9 +13,9 @@ public class Button2
     private String text;
     private int location = 0;
     String[] planets = {"Bray", "Jumanji", "Chatsky", "Qatar" };
-    private float[] starsx = new float [1];
-	private float[] starsy = new float [1];
-    PImage stars;
+    private float[] starsx = new float [10];
+	private float[] starsy = new float [10];
+    //PImage stars;
 
     
     public Button2(UI ui, float x, float y, float width, float height, String text)
@@ -26,7 +26,7 @@ public class Button2
         this.width = width;
         this.height = height;
         this.text = text;
-        stars = ui.loadImage("images/stars.png");
+        //stars = ui.loadImage("images/stars.png");
     }
 
     public void render() 
@@ -64,14 +64,14 @@ public class Button2
         ui.rect(x - 150 , y + 100, width + 150, height);//Planet box
 
         int i = 0;
-        while ( i < 1)
+        while ( i < 10)
         {
             starsx[i] = ui.random(ui.width - ((ui.width - 400) / 4), (ui.width - ((ui.width - 400) / 4) + 200));
             starsy[i] = ui.random(ui.height / 2, (ui.height / 2) + 100);
             i++;
         }
         i = 0;
-        while (i < 1)
+        while (i < 10)
         {
             ui.fill(255);
             ui.stroke(255);
@@ -122,8 +122,8 @@ public class Button2
         {
             ui.fill(44, 158, 74);
             ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
-            ui.fill(0);
-            ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
+            // ui.fill(0);
+            // ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
             ui.fill(44, 158, 74);
             ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
         } else
@@ -131,8 +131,8 @@ public class Button2
         {
             ui.fill(215, 169, 78);
             ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
-            ui.fill(0);
-            ui.image(stars,  ui.width - ((ui.width - 400) / 4),ui.height / 2);
+            // ui.fill(0);
+            // ui.image(stars,  ui.width - ((ui.width - 400) / 4),ui.height / 2);
             ui.fill(215, 169, 78);
             ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
         } else
@@ -140,8 +140,8 @@ public class Button2
         {
             ui.fill(242, 66, 54);
             ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);
-            ui.fill(0);
-            ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
+            // ui.fill(0);
+            // ui.image(stars, ui.width - ((ui.width - 400) / 4), ui.height / 2);
             ui.fill(242, 66, 54);
             ui.ellipse(ui.width - ((ui.width - 400) / 4) + 100,(ui.height / 2) + 50, 50, 50);
         }
@@ -159,9 +159,9 @@ public class Button2
     {
         
         int i = 0;
-        while (i < 1)
+        while (i < 10)
         {
-            if(starsx[i] > (ui.width - ((ui.width - 400) / 4) + 200) || starsx[i] >  (ui.height / 2) + 100)
+            if(starsx[i] <= (ui.width - ((ui.width - 400) / 4) + 200) || starsy[i] >= ((ui.height / 2) + 100))
             {
                 starsx[i] = ui.random(ui.width - ((ui.width - 400) / 4), (ui.width - ((ui.width - 400) / 4) + 200));
                 starsy[i] = ui.random(ui.height / 2, (ui.height / 2) + 100);

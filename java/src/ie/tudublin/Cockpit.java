@@ -73,28 +73,13 @@ public class Cockpit
             	counter += 1;
                 //System.out.println(i);
 				ui.delay(200);//delays the button so that it cannot increment by more than one
-				System.out.print(counter);
+				//System.out.print(counter);
             }
         } 
 	}
 
 	public void update()
 	{
-		
-		/*
-		if(fat == 10)
-		{
-			fat = 1;
-			tall = 1;
-		}
-		
-		if(fat1 == 10)
-		{
-			fat1 = 1;
-			tall1 = 1;
-		}
-		*/
-		
 		i = 0;
 		if((counter % 2) == 0)
 		{
