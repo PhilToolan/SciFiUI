@@ -2,14 +2,14 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Hangar
+public class Canteen
 {
     UI ui;
     private float width;
     private float height;
     
 
-    public Hangar(UI ui, float width, float height)
+    public Canteen(UI ui, float width, float height)
     {
         this.ui = ui;
         this.width = width;
@@ -18,11 +18,12 @@ public class Hangar
 
     public void render()
     {
-        ui.fill(0);
+        ui.fill(105,105,105);
         ui.strokeWeight(1);
         ui.stroke(192,192,192);
         ui.rect(400, height, width / 2, height * 2);
 
-        ui.rect(450, height + 50, ((width / 2) - 100), ((height * 2) - 100));
+        ui.fill(255);
+        ui.rect(500, ((height * 2) - 100), ((width / 2) - 200), 50);
     }
 }

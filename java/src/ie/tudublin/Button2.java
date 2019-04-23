@@ -50,24 +50,6 @@ public class Button2
         } 
 
 
-
-        int i = 0;
-        while ( i < 10)
-        {
-            starsx[i] = ui.random(ui.width - ((ui.width - 400) / 4), (ui.width - ((ui.width - 400) / 4) + 200));
-            starsy[i] = ui.random(ui.height / 2, (ui.height / 2) + 100);
-            i++;
-        }
-        i = 0;
-        while (i < 10)
-        {
-            ui.fill(255);
-            ui.stroke(255);
-            ui.ellipse(starsx[i], starsy[i], 1, 1);
-            i++;
-        }
-        ui.noStroke();
-
         // i = 0;
         // while ( i < 25)
         // {
@@ -100,17 +82,5 @@ public class Button2
     public void update()
     {
         
-        int i = 0;
-        while (i < 10)
-        {
-            if(starsx[i] <= (ui.width - ((ui.width - 400) / 4) + 200) || starsy[i] >= ((ui.height / 2) + 100))
-            {
-                starsx[i] = ui.random(ui.width - ((ui.width - 400) / 4), (ui.width - ((ui.width - 400) / 4) + 200));
-                starsy[i] = ui.random(ui.height / 2, (ui.height / 2) + 100);
-            }
-            starsx[i] += 0.005f;
-            starsy[i] += 0.005f;
-            i++;
-        }
     }
 }

@@ -163,6 +163,7 @@ public class Cockpit
 				xur[i] += 0.005f;
 				yur[i] -= 0.005f;
 				i++;
+				ui.noStroke();
 				 //Planets
 				 if(location == 0)
 				 {
