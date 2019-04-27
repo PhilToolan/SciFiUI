@@ -20,7 +20,7 @@ public class Cockpit
 	private int i = 0;
 	private int counter = 5;
 	private float location = 0;
-
+	public float y = height;
 
     public Cockpit(UI ui, float width, float height)
     {
@@ -35,6 +35,19 @@ public class Cockpit
 		ui.stroke(255);
         ui.rect(400, 0, width / 2, height);
 		ui.fill(255);
+		ui.fill(105,105,105);
+        ui.strokeWeight(1);
+        ui.stroke(192,192,192);
+        ui.rect(400, height, width / 2, height);
+
+        ui.fill(255);
+        ui.rect((400 + (width / 2) / 2) - 100, height + (height / 2), 200, height / 2);
+        ui.rect((400 + (width / 2) / 2) - 100, height, 200, (height / 2) - 100);
+        ui.line(400, y, width, y);
+        y = y - 1; 
+        if (y < height) { 
+          y = ui.height; 
+        }
 		while(i < 200)
 		{
 			
