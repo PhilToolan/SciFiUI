@@ -19,6 +19,14 @@ public class Room
     public void render()
     {
         //ui.line(400, 0, 400, 800);//split screen
+        //wall
+        ui.noStroke();
+        ui.fill(128, 0, 0);
+        ui.rect(400 + ((width - 400) / 2), height, ui.width, ui.height);
+
+        //window
+        ui.fill(0);
+        ui.rect( ui.width - ((ui.width - 400) / 4), ui.height / 2, 200, 100);
 
 
         //Bed Frame

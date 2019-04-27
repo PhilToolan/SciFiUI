@@ -54,6 +54,8 @@ public class UI extends PApplet
         b2.render();
         b2.update();
 
+        r.render();
+        
         cp.render();
         cp.update();
 
@@ -64,7 +66,7 @@ public class UI extends PApplet
         //mc.render();
 
 
-        r.render();
+        
 
        
 

@@ -25,38 +25,48 @@ public class Cockpit
 	private float engineball = 255;
 	private float engineball2 = 255;
 	private float engineball3 = 255;
+	private float exhaustflame = 0;
+	private float exhaustflame2 = 0;
+	private float secexhaustflame = 0;
+	private float exhaustflameheight;
+	private float secexhaustflameheight;
+
 
     public Cockpit(UI ui, float width, float height)
     {
         this.ui = ui;
         this.width = width;
-        this.height = height;
+		this.height = height;
+		exhaustflameheight = height - 25;
+		secexhaustflameheight = height - 15;
     }
 
     public void render()
     {
+		ui.strokeWeight(1);
         ui.fill(0);
 		ui.stroke(255);
-        ui.rect(400, 0, width / 2, height);
-		ui.fill(255);
+        ui.rect(400, 0, width / 2, height);//Cockpit section
 		ui.fill(105,105,105);
-        ui.strokeWeight(1);
         ui.stroke(192,192,192);
-        ui.rect(400, height, width / 2, height);
+        ui.rect(400, height, width / 2, height);//Engine Room
 
+		//Engine 
         ui.fill(255);
         ui.rect((400 + (width / 2) / 2) - 100, height + (height / 2) + 50, 200, height / 2);
 		ui.rect((400 + (width / 2) / 2) - 100, height, 200, (height / 2) - 50);
 		ui.stroke(0);
+		//moving lines in engine
 		ui.line((400 + (width / 2) / 2) - 100, y, (400 + (width / 2) / 2) + 100, y);
 		ui.line((400 + (width / 2) / 2) - 100, y2, (400 + (width / 2) / 2) + 100, y2);
+		//lines connecting ball to engine
 		ui.line((400 + (width / 2) / 2) - 100, height + (height / 2) + 50, (400 + (width / 2) / 2),  height + (height / 2));
 		ui.line((400 + (width / 2) / 2) + 100, height + (height / 2) + 50, (400 + (width / 2) / 2),  height + (height / 2));
 		ui.line((400 + (width / 2) / 2) - 100, height + (height / 2) - 50, (400 + (width / 2) / 2),  height + (height / 2));
 		ui.line((400 + (width / 2) / 2) + 100, height + (height / 2) - 50, (400 + (width / 2) / 2),  height + (height / 2));
 		ui.noStroke();
 		ui.fill(engineball, engineball2, engineball3);
-		ui.ellipse((400 + (width / 2) / 2), height + (height / 2), 50, 50);
+		ui.ellipse((400 + (width / 2) / 2), height + (height / 2), 50, 50);//Engine ball
 		ui.stroke(255);
 		while(i < 200)
 		{
@@ -81,12 +91,34 @@ public class Cockpit
 			i += 1;
 		}
 		
+		//cockpit ui section
 		ui.fill(192,192,192);
-		ui.rect(400, height - (height / 4), width / 2, height / 3.5f);
+		ui.rect(400, height - 100, width / 2, 100);//cockpit console
 		ui.fill(0);
-		ui.rect(400, height - (height / 6), (width / 2) / 4, height / 10);
+		ui.rect(400, height - (height / 6), (width / 2) / 4, height / 10);//warp drive
 		ui.fill(255);
 		ui.text("Warp Drive", 400 + ((width/2)/4) * 0.5f, (height - (height / 6)) + (height / 10) * 0.5f);
+		//glass frames
+		ui.strokeWeight(3);
+		ui.line(500, 0, 500, (height - 100) / 2);
+		ui.line(500, (height - 100) / 2, 480, ((height - 100) / 2) + 20);
+		ui.line(480, ((height - 100) / 2) + 20, 480, height - 100);
+		ui.line((width / 2)  + 300, 0, (width / 2) + 300, (height - 100) / 2);
+		ui.line((width / 2)  + 300, (height - 100) / 2, (width / 2)  + 320, ((height - 100) / 2) + 20);
+		ui.line((width / 2)  + 320, ((height - 100) / 2) + 20, (width / 2)  + 320, height - 100);
+		//spaceship diagram 
+		ui.fill(0);
+		ui.ellipse((width / 2) + 300, height - 50, 80, 80);
+		ui.strokeWeight(1);
+		ui.rect((width / 2) + 290, height - 75, 20, 40);
+		ui.triangle((width / 2) + 290, height - 75, (width / 2) + 290, height - 35, (width / 2) + 270, height - 35);
+		ui.triangle((width / 2) + 310, height - 75, (width / 2) + 310, height - 35, (width / 2) + 330, height - 35);
+		ui.triangle((width / 2) + 310, height - 75, (width / 2) + 290, height - 75, (width / 2) + 300, height - 85);
+		ui.noStroke();
+		ui.fill(secexhaustflame, 0, 0);
+		ui.triangle((width / 2) + 313, height - 34, (width / 2) + 287, height - 34, (width / 2) + 300, secexhaustflameheight);
+		ui.fill(exhaustflame, exhaustflame2, 0);
+		ui.triangle((width / 2) + 310, height - 34, (width / 2) + 290, height - 34, (width / 2) + 300, exhaustflameheight);
 
 		if(ui.mousePressed)
         {
@@ -112,7 +144,7 @@ public class Cockpit
 		{
 			while(i < 200)
 		{
-			if(xl[i] <= 415 || yl[i] >= height - 15)
+			if(xl[i] <= 405 || yl[i] >= height - 15)
 			{
 				xl[i] = ui.random(415, 400 + (width / 2) / 2);
 				yl[i] = ui.random(height / 2, height - 15);
@@ -120,14 +152,14 @@ public class Cockpit
 			xl[i] -= 3;
 			yl[i] += 3;
 			
-			if(xr[i] >= 400 + (width / 2) || yr[i] >= height - 15)
+			if(xr[i] >= 400 + (width / 2) - 5 || yr[i] >= height - 15)
 			{
 				xr[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2) - 15);
 				yr[i] = ui.random(height / 2, height - 15);
 			}
 			xr[i] += 3;
 			yr[i] += 3;
-			if(xul[i] <= 415 || yul[i] <= 0)
+			if(xul[i] <= 405 || yul[i] <= 0)
 			{
 				xul[i] = ui.random(415, 400 + (width / 2) / 2);
 				yul[i] = ui.random(15, height / 2);
@@ -136,7 +168,7 @@ public class Cockpit
 			yul[i] -= 3;
 			
 			
-			if(xur[i] >= 400 + (width / 2)  || yur[i] <= 0)
+			if(xur[i] >= 400 + (width / 2) - 5 || yur[i] <= 0)
 			{
 				xur[i] = ui.random(400 + (width / 2) / 2, 400 + (width / 2) - 15);
 				yur[i] = ui.random(15, height / 2);
@@ -173,13 +205,25 @@ public class Cockpit
 			{
 				engineball3 = 255;
 			}
+			exhaustflame += 10;
+			if (exhaustflame > 255)
+			{
+				exhaustflame -=10;
+				exhaustflame2 = 69;
+				secexhaustflame += 10;
+			}
+			if (secexhaustflame > 255)
+			{
+				secexhaustflame -= 10;
+			}
+			
 		}
 
 		if((counter % 2 != 0))
 		{
 			while(i < 200)
 			{
-				if(xl[i] <= 415 || yl[i] >= height - 15)
+				if(xl[i] <= 405 || yl[i] >= height - 15)
 				{
 					xl[i] = ui.random(415, 400 + (width / 2) / 2);
 					yl[i] = ui.random(height / 2, height - 15);
@@ -194,7 +238,7 @@ public class Cockpit
 				}
 				xr[i] += 0.005f;
 				yr[i] += 0.005f;
-				if(xul[i] <= 415 || yul[i] <= 0)
+				if(xul[i] <= 405 || yul[i] <= 0)
 				{
 					xul[i] = ui.random(415, 400 + (width / 2) / 2);
 					yul[i] = ui.random(15, height / 2);
@@ -259,6 +303,18 @@ public class Cockpit
 			engineball = 255;
 			engineball2 = 255;
 			engineball3 = 255;
+			exhaustflame2 -= 5;
+			secexhaustflame -= 5;
+			if (secexhaustflame < 0)
+			{
+				secexhaustflame +=5;
+				exhaustflame -= 5;
+				exhaustflame2 += 5;
+			}
+			if (exhaustflame < 0)
+			{
+				exhaustflame += 5;
+			}
 		}
 		
 	}
