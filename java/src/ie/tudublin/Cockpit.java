@@ -21,6 +21,10 @@ public class Cockpit
 	private int counter = 5;
 	private float location = 0;
 	public float y = height;
+	public float y2 = height;
+	private float engineball = 255;
+	private float engineball2 = 255;
+	private float engineball3 = 255;
 
     public Cockpit(UI ui, float width, float height)
     {
@@ -41,13 +45,19 @@ public class Cockpit
         ui.rect(400, height, width / 2, height);
 
         ui.fill(255);
-        ui.rect((400 + (width / 2) / 2) - 100, height + (height / 2), 200, height / 2);
-        ui.rect((400 + (width / 2) / 2) - 100, height, 200, (height / 2) - 100);
-        ui.line(400, y, width, y);
-        y = y - 1; 
-        if (y < height) { 
-          y = ui.height; 
-        }
+        ui.rect((400 + (width / 2) / 2) - 100, height + (height / 2) + 50, 200, height / 2);
+		ui.rect((400 + (width / 2) / 2) - 100, height, 200, (height / 2) - 50);
+		ui.stroke(0);
+		ui.line((400 + (width / 2) / 2) - 100, y, (400 + (width / 2) / 2) + 100, y);
+		ui.line((400 + (width / 2) / 2) - 100, y2, (400 + (width / 2) / 2) + 100, y2);
+		ui.line((400 + (width / 2) / 2) - 100, height + (height / 2) + 50, (400 + (width / 2) / 2),  height + (height / 2));
+		ui.line((400 + (width / 2) / 2) + 100, height + (height / 2) + 50, (400 + (width / 2) / 2),  height + (height / 2));
+		ui.line((400 + (width / 2) / 2) - 100, height + (height / 2) - 50, (400 + (width / 2) / 2),  height + (height / 2));
+		ui.line((400 + (width / 2) / 2) + 100, height + (height / 2) - 50, (400 + (width / 2) / 2),  height + (height / 2));
+		ui.noStroke();
+		ui.fill(engineball, engineball2, engineball3);
+		ui.ellipse((400 + (width / 2) / 2), height + (height / 2), 50, 50);
+		ui.stroke(255);
 		while(i < 200)
 		{
 			
@@ -136,8 +146,33 @@ public class Cockpit
 			i++;
 			ui.noStroke();
 			ui.fill(124,252,0);
-			ui.ellipse((385 + (width / 2) / 4), height - (height / 6) + 10, 5, 5);
+			ui.ellipse((385 + (width / 2) / 4), height - (height / 6) + 10, 5, 5);//Light on button
 		}
+			y = y - 3; 
+			if (y < height + (height / 2) + 50)
+			{ 
+				y = ui.height; 
+			}//Engine
+			y2 = y2 + 3; 
+			if (y2 > height + (height / 2) - 50)
+			{ 
+				y2 = height; 
+			}//Engine
+			engineball = engineball - 5;
+			if (engineball < 0)
+			{
+				engineball = 255;
+			}
+			engineball2 = engineball2 - 3;
+			if (engineball2 < 0)
+			{
+				engineball2 = 255;
+			}
+			engineball3 = engineball3 - 1;
+			if (engineball3 < 0)
+			{
+				engineball3 = 255;
+			}
 		}
 
 		if((counter % 2 != 0))
@@ -210,6 +245,20 @@ public class Cockpit
 				ui.fill(255,0,0);
 				ui.ellipse((385 + (width / 2) / 4), height - (height / 6) + 10, 5, 5);//Light on button
 			}
+
+			y = y - 1; 
+			if (y < height + (height / 2) + 50)
+			{ 
+				y = ui.height; 
+			}//Engine
+			y2 = y2 + 1; 
+			if (y2 > height + (height / 2) - 50)
+			{ 
+				y2 = height; 
+			}//Engine
+			engineball = 255;
+			engineball2 = 255;
+			engineball3 = 255;
 		}
 		
 	}
