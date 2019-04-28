@@ -20,8 +20,8 @@ public class Cockpit
 	private int i = 0;
 	private int counter = 5;
 	private float location = 0;
-	public float y = height;
-	public float y2 = height;
+	public float y;
+	public float y2;
 	private float engineball = 255;
 	private float engineball2 = 255;
 	private float engineball3 = 255;
@@ -39,6 +39,8 @@ public class Cockpit
 		this.height = height;
 		exhaustflameheight = height - 25;
 		secexhaustflameheight = height - 15;
+		y = height;
+		y2 = height;
     }
 
     public void render()

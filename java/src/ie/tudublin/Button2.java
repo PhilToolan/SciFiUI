@@ -11,7 +11,7 @@ public class Button2
     private float width;
     private float height;
     private String text;
-    private int location = 0;
+    private int i;
     String[] planets = {"Bray", "Jumanji", "Chatsky", "Qatar" };
 
 
@@ -43,6 +43,7 @@ public class Button2
             if(ui.mouseX > x && ui.mouseX < x + width && ui.mouseY > y && ui.mouseY < y + height)
             {
                 ui.delay(200);//delays the button so that it cannot increment by more than one
+                i++;
             }
         } 
     }
@@ -50,6 +51,6 @@ public class Button2
 
     public void update()
     {
-        
+        System.out.println(i);
     }
 }

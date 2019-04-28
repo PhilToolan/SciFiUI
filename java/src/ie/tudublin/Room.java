@@ -7,6 +7,7 @@ public class Room
     UI ui;
     private float width;
     private float height;
+    private float i = 0;
 
 
     public Room(UI ui, float width, float height)
@@ -28,6 +29,17 @@ public class Room
         ui.fill(0);
         ui.rect( ui.width - ((ui.width - 400) / 4), ui.height / 2, 200, 100);
 
+        //white board
+        ui.fill(255);
+        ui.rect(400 + ((width - 400) / 2) + 10, (height) + (height / 2) - 50, 200, 100);
+        if(ui.mousePressed)
+        {
+            if(ui.mouseX > 400 + ((width - 400) / 2) + 10 && ui.mouseX < 400 + ((width - 400) / 2) + 10 + 200 && ui.mouseY > (height) + (height / 2) - 50 && ui.mouseY < (height) + (height / 2) - 50 + 100)
+            {
+                ui.stroke(0);
+                ui.line(ui.mouseX, ui.mouseY, ui.pmouseX, ui.pmouseY);
+            }
+        } 
 
         //Bed Frame
 
