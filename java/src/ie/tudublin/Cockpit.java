@@ -54,7 +54,7 @@ public class Cockpit
         ui.rect(400, height, width / 2, height);//Engine Room
 
 		//Engine 
-        ui.fill(255);
+        ui.fill(160, 160, 160);
         ui.rect((400 + (width / 2) / 2) - 100, height + (height / 2) + 50, 200, height / 2);
 		ui.rect((400 + (width / 2) / 2) - 100, height, 200, (height / 2) - 50);
 		ui.stroke(0);

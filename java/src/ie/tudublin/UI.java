@@ -10,6 +10,7 @@ public class UI extends PApplet
     Orbit o;
     Room r;
     Cockpit cp;
+    Lab l;
 
     boolean[] keys = new boolean[1024];
 
@@ -44,7 +45,7 @@ public class UI extends PApplet
         o = new Orbit(this, width / 8, height - 100, 100);
         r = new Room(this, width, height / 2);
         cp = new Cockpit(this, width - 400, height / 2);
-       
+        l = new Lab(this, width - 400, height / 2);
     }
 
     public void draw()
@@ -54,6 +55,7 @@ public class UI extends PApplet
         b2.render();
         b2.update();
 
+
         r.render();
         
         cp.render();
@@ -62,6 +64,7 @@ public class UI extends PApplet
         b.render();
         b.update();
 
+        l.render();
         //mc.update();
         //mc.render();
 
