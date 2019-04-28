@@ -11,8 +11,8 @@ public class Button2
     private float width;
     private float height;
     private String text;
-    private int i;
-    String[] planets = {"Bray", "Jumanji", "Chatsky", "Qatar" };
+    private int location = 0;
+    String[] planets = {"Angade", "Pondapus", "Dumia", "Thonkoth" };
 
 
     
@@ -31,7 +31,7 @@ public class Button2
         ui.strokeWeight(1);
         ui.fill(128, 0, 0);//colour of console
         ui.rect(0, 0, 400, ui.height);//Life size console
-        ui.fill(255,215,0);
+        ui.fill(252,175,22);
         ui.stroke(255);
         ui.rect(x, y, width, height);//button
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
@@ -43,14 +43,45 @@ public class Button2
             if(ui.mouseX > x && ui.mouseX < x + width && ui.mouseY > y && ui.mouseY < y + height)
             {
                 ui.delay(200);//delays the button so that it cannot increment by more than one
-                i++;
+                location ++;
+                if (location == 4)
+                {
+                    location = 0;
+                }
             }
         } 
+
+        ui.fill(252,175,22);
+        ui.rect(ui.width / 20, ui.height / 2, width * 2, height);//Planet name
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(255);
+        ui.text(planets[location], ui.width / 20 +  (width * 2) * 0.5f, (ui.height / 2) + height * 0.5f);
     }
 
 
     public void update()
     {
-        //System.out.println(i);
+        ui.noStroke();
+        if (location == 0)
+        {
+            ui.fill(19, 77, 164);
+		    ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);//diagram
+        }
+        if (location == 1)
+        {
+            ui.fill(44, 158, 74);
+		    ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);//diagram
+        }
+        if (location == 2)
+        {
+            ui.fill(215, 169, 78);
+            ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);//diagram
+        }
+        if (location == 3)
+        {
+            ui.fill(242, 66, 54);
+            ui.ellipse(ui.width / 20, ui.height - 100, 100, 100);//diagram
+        }
+        
     }
 }

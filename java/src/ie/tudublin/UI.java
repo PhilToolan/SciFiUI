@@ -39,8 +39,8 @@ public class UI extends PApplet
     public void setup()
     {
         b = new Button(this, 50, 50, 100, 50, "Blinds");
-        b2 = new Button2(this, 200, 50, 100, 50, "unknown");
-        o = new Orbit(this, width / 8, height - 100, 100);
+        b2 = new Button2(this, 200, 50, 100, 50, "Planets");
+        o = new Orbit(this, width / 20, height - 100, 100);
         r = new Room(this, width, height / 2);
         cp = new Cockpit(this, width - 400, height / 2);
         l = new Lab(this, width - 400, height / 2);
@@ -64,9 +64,6 @@ public class UI extends PApplet
 
         l.render();
         l.update();
-
-
-        
 
        
 

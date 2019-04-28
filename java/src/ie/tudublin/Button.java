@@ -36,9 +36,7 @@ public class Button
     public void render() 
     {   
         ui.strokeWeight(1);
-        //ui.fill(128, 111, 111);
-        //ui.rect(0, 0, 400, 800);
-        ui.fill(255,215,0);
+        ui.fill(252,175,22);
         ui.stroke(255);
         ui.rect(x, y, width, height);//button
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
@@ -59,12 +57,12 @@ public class Button
         } 
 
         //insturctions for orbit and weather
-        ui.fill(255,215,0);
+        ui.fill(252,175,22);
         ui.noStroke();
         ui.rect(x, y + 200, width + 150, height);
         ui.textAlign(PApplet.CENTER, PApplet.CENTER);
         ui.fill(255);
-        ui.text("Press right for Orbit, left for Weather", x + (width + 150) * 0.5f, (y + 200) + height * 0.5f);
+        ui.text("Press right for our optimum orbit", x + (width + 150) * 0.5f, (y + 200) + height * 0.5f);
 
     }
 
