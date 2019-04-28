@@ -51,6 +51,6 @@ public class Button2
 
     public void update()
     {
-        System.out.println(i);
+        //System.out.println(i);
     }
 }

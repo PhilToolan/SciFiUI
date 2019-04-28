@@ -6,7 +6,6 @@ public class UI extends PApplet
 {
     Button b;
     Button2 b2;
-    MovingCircle mc;
     Orbit o;
     Room r;
     Cockpit cp;
@@ -41,7 +40,6 @@ public class UI extends PApplet
     {
         b = new Button(this, 50, 50, 100, 50, "Blinds");
         b2 = new Button2(this, 200, 50, 100, 50, "unknown");
-        mc = new MovingCircle(this, width / 2, height / 2, 50);
         o = new Orbit(this, width / 8, height - 100, 100);
         r = new Room(this, width, height / 2);
         cp = new Cockpit(this, width - 400, height / 2);
@@ -65,8 +63,7 @@ public class UI extends PApplet
         b.update();
 
         l.render();
-        //mc.update();
-        //mc.render();
+        l.update();
 
 
         
