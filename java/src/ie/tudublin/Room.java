@@ -31,6 +31,10 @@ public class Room
         //white board
         ui.fill(255);
         ui.rect(400 + ((width - 400) / 2) + 10, (height) + (height / 2) - 50, 200, 100); 
+        ui.fill(0);
+        ui.text("White Board", 400 + ((width - 400) / 2) + 100, (height) + (height / 2) - 40);
+        ui.stroke(0);
+        ui.line(400 + ((width - 400) / 2) + 65, (height) + (height / 2) - 30, 400 + ((width - 400) / 2) + 130, (height) + (height / 2) - 30);
         if(ui.mousePressed)
         {
             if(ui.mouseX > 400 + ((width - 400) / 2) + 10 && ui.mouseX < 400 + ((width - 400) / 2) + 10 + 200 && ui.mouseY > (height) + (height / 2) - 50 && ui.mouseY < (height) + (height / 2) - 50 + 100)
