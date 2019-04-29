@@ -29,6 +29,15 @@ public class Lab
         ui.fill(224, 224, 224);
         ui.rect(400 + (width / 2), 0, ui.width, height);//outline of lab section
 
+        //Sign
+        ui.fill(0);
+        ui.rect(420 + (width / 2), 20, (width / 2) - 40, height / 6);
+        ui.textAlign(PApplet.CENTER, PApplet.CENTER);
+        ui.fill(255);
+        ui.textSize(50);
+        ui.text("Space Laboratories", 420 + (width / 2) + ((width / 2) - 40) * 0.5f, 20 + (height / 6) * 0.5f);
+        ui.textSize(12);
+
         //Table
         ui.fill(0);
         ui.rect(width, height - (height / 3), ui.width, 50);
