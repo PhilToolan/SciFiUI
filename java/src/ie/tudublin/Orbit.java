@@ -45,7 +45,7 @@ public class Orbit
 
     public void reset()
     {
-        x1 = x;//resets x1 and y1 so that the line does not grow bigger than the radar
+        x1 = x;//resets x1 and y1 so that the line does not grow bigger than the desired orbit
         y1 = y;
     }
 }
