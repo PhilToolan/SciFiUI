@@ -13,7 +13,7 @@ https://youtu.be/nSGlqEqQKaU
 My assingment is the ui of a full spaceship including all these rooms (Cockpit, bedroom, engine room and lab). It consists of each room 
 being displayed simultaneously aswell as a life size version of the console command panel that is on the bedroom wall.  In the cockpit 
 you can travel from planet to planet using a warp drive, the bedroom houses a window and white board, the engine room reacts to the use 
-of the warp drive and the in the lab you can operate a laser. 
+of the warp drive and in the lab you can operate a laser. 
 
 # Instructions
 
