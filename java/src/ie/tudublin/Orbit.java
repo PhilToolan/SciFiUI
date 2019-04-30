@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
+//import processing.core.PApplet;
 
 public class Orbit
 {
@@ -39,7 +39,7 @@ public class Orbit
     {
         ui.strokeWeight(1);
         ui.fill(0, 204, 0);
-        ui.rect(x1, y1, 10, 10);//Shape that rotates aroud the centre of the planet
+        ui.ellipse(x1, y1, 10, 10);//Shape that rotates aroud the centre of the planet
 
     }
 

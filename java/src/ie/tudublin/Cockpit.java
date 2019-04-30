@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
+//import processing.core.PApplet;
 
 public class Cockpit
 {
@@ -218,6 +218,7 @@ public class Cockpit
 			{
 				engineball3 = 255;
 			}
+			//Spaceship diagram
 			exhaustflame += 10;
 			if (exhaustflame > 255)
 			{
@@ -326,6 +327,7 @@ public class Cockpit
 			engineball = 255;
 			engineball2 = 255;
 			engineball3 = 255;
+			//Spaceship diagram
 			exhaustflame2 -= 5;
 			secexhaustflame -= 5;
 			if (secexhaustflame < 0)

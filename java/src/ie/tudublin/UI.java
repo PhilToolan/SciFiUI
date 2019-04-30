@@ -65,28 +65,11 @@ public class UI extends PApplet
         l.render();
         l.update();
 
-       
-
-        if (checkKey(LEFT))
-        {
-        
-        }
-
         if (checkKey(RIGHT))
         {
             o.render();
             o.reset();
             o.update();
-        }
-
-        if (checkKey(UP))
-        {
-           
-        }
-
-        if(checkKey(DOWN))
-        {
-
         }
     }
 

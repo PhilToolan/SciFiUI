@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
+//import processing.core.PApplet;
 
 public class Room
 {
@@ -33,21 +33,21 @@ public class Room
         ui.rect( ui.width - ((ui.width - 400) / 4), ui.height / 2, 200, 100);
         ui.fill(255);
         ui.stroke(1);
-        
-            while(j < 30)
-            {
-                x[j] = ui.random(ui.width - ((ui.width - 400) / 4), ui.width - ((ui.width - 400) / 4) + 197);
-                y[j] = ui.random(ui.height / 2, ui.height / 2 + 97);
-                System.out.println(x[j]);
-                System.out.println(y[j]);
-                j += 1;
-            }
-            j = 0;
-            while(j < 30)
-            {
-                ui.ellipse(x[j], y[j], 3, 3);
-                j += 1;
-            }
+        //Stars for window
+        while(j < 30)
+        {
+            x[j] = ui.random(ui.width - ((ui.width - 400) / 4), ui.width - ((ui.width - 400) / 4) + 197);
+            y[j] = ui.random(ui.height / 2, ui.height / 2 + 97);
+            System.out.println(x[j]);
+            System.out.println(y[j]);
+            j += 1;
+        }
+        j = 0;
+        while(j < 30)
+        {
+            ui.ellipse(x[j], y[j], 3, 3);
+            j += 1;
+        }
         ui.noStroke();
 
         //white board
@@ -97,5 +97,17 @@ public class Room
         //Duvet
         ui.fill(204, 0, 0);
         ui.rect((width) - 340,(height * 2) - 100, 285, 40);
+
+        //Miniture console representation
+        ui.fill(128, 0, 0);
+        ui.stroke(1);
+        ui.rect(width - 40, height + (height / 2), 20, 40);
+        //Buttons on the console
+        ui.noStroke();
+        ui.fill(252,175,22);
+        ui.rect(width - 35, height + (height / 2) + 5, 5, 6);
+        ui.rect(width - 28, height + (height / 2) + 5, 5, 6);
+        ui.rect(width - 35, height + (height / 2) + 19, 12, 6);
+        ui.rect(width - 35, height + (height / 2) + 30, 12, 6);
     }
 }
