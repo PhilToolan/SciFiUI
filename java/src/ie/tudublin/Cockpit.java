@@ -17,7 +17,10 @@ public class Cockpit
 	private float[] yr = new float [200];
 	private float[] xur = new float [200];
 	private float[] yur = new float [200];
+	private float[] wx = new float [30];
+	private float[] wy = new float [30];
 	private int i = 0;
+	private int j = 0;
 	private int counter = 5;
 	private float location = 0;
 	public float y;
@@ -84,6 +87,13 @@ public class Cockpit
 			i += 1;
 		}
 		i = 0;
+		while(j < 30)
+		{
+			wx[j] = ui.random(ui.width - ((ui.width - 400) / 4), ui.width - ((ui.width - 400) / 4) + 197);
+			wy[j] = ui.random(ui.height / 2, ui.height / 2 + 97);
+			j += 1;
+		}
+		j = 0;
 		while(i < 200)
 		{
 			ui.ellipse(xl[i], yl[i], fat, tall);
@@ -142,6 +152,7 @@ public class Cockpit
 	public void update()
 	{
 		i = 0;
+		j = 0;
 		if((counter % 2) == 0)
 		{
 			while(i < 200)
@@ -217,6 +228,23 @@ public class Cockpit
 			if (secexhaustflame > 255)
 			{
 				secexhaustflame -= 10;
+			}
+
+			ui.fill(255);
+			//Window Stars
+			while(j < 30)
+            {
+				if (wx[j] < ui.width - ((ui.width - 400) / 4) || wx[j] > ui.width - ((ui.width - 400) / 4) + 197)
+				{
+					wx[j] = ui.random(ui.width - ((ui.width - 400) / 4), ui.width - ((ui.width - 400) / 4) + 197);
+					wy[j] = ui.random(ui.height / 2, ui.height / 2 + 97);
+				}
+				
+				ui.ellipse(wx[j], wy[j], 3, 3);
+				wx[j] += 3;
+				j += 1;
+				
+				
 			}
 			
 		}

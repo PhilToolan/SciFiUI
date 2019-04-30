@@ -7,6 +7,10 @@ public class Room
     UI ui;
     private float width;
     private float height;
+    private float[] x = new float [30];
+    private float[] y = new float [30];
+    private int i = 0;//Used to make sure stars are created once only
+    private int j = 0;
 
 
     public Room(UI ui, float width, float height)
@@ -27,9 +31,26 @@ public class Room
         //window
         ui.fill(0);
         ui.rect( ui.width - ((ui.width - 400) / 4), ui.height / 2, 200, 100);
+        ui.fill(255);
+        ui.stroke(1);
+        
+            while(j < 30)
+            {
+                x[j] = ui.random(ui.width - ((ui.width - 400) / 4), ui.width - ((ui.width - 400) / 4) + 197);
+                y[j] = ui.random(ui.height / 2, ui.height / 2 + 97);
+                System.out.println(x[j]);
+                System.out.println(y[j]);
+                j += 1;
+            }
+            j = 0;
+            while(j < 30)
+            {
+                ui.ellipse(x[j], y[j], 3, 3);
+                j += 1;
+            }
+        ui.noStroke();
 
         //white board
-        ui.fill(255);
         ui.rect(400 + ((width - 400) / 2) + 10, (height) + (height / 2) - 50, 200, 100); 
         ui.fill(0);
         ui.text("White Board", 400 + ((width - 400) / 2) + 100, (height) + (height / 2) - 40);

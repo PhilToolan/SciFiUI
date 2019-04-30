@@ -26,8 +26,8 @@ public class Orbit
 
     public void update()
     {
-        angle += 0.01;//determines the speed of the radar
-        x1 += ((radius + 10) * (Math.cos(angle)));//to change the point around the circle of the radar
+        angle += 0.01;//determines the speed of the orbit
+        x1 += ((radius + 10) * (Math.cos(angle)));//to change the point around the circle of the planet
         y1 += ((radius + 10) * (Math.sin(angle)));
        /* System.out.println((radius * (Math.sin(angle))));
         System.out.println((radius * (Math.cos(angle))));
@@ -38,17 +38,8 @@ public class Orbit
     public void render()
     {
         ui.strokeWeight(1);
-        /*
-        ui.stroke(255);//Green colour for the radar
-        ui.fill(0);
-        ui.ellipse(x, y, diameter, diameter);//original circle for the radar
-        */
-        //ui.ellipse(x, y, radius, radius);//additional circles for the radar
-        //ui.ellipse(x, y, radius * (float) 1.5, radius * (float) 1.5);
-        //ui.ellipse(x, y, radius * (float) 0.5, radius * (float) 0.5);
         ui.fill(0, 204, 0);
-        ui.rect(x1, y1, 10, 10);//line that rotates about the centre of the radar
-        //ui.line(x + 20, y + 20, x + 20, y + 20 );
+        ui.rect(x1, y1, 10, 10);//Shape that rotates aroud the centre of the planet
 
     }
 
