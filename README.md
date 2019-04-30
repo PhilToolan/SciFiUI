@@ -4,6 +4,8 @@ Name: Philip Toolan
 
 Student Number: C17433026
 
+This is the youtube video:
+https://youtu.be/nSGlqEqQKaU
 
 
 # Description of the assignment
@@ -28,7 +30,7 @@ keep happening after the button is only pressed once. Before this the function w
 function is further controlled by checking the variable mod 2, so when the variable is even it will work and when it is odd it will be 
 shut off.
 
-## Cockpit Class
+### Cockpit Class
 
 The cockpit class controls many aspects of the UI. The stars are generated within this class, the coordinates of the stars are stored in 
 arrays. These coordinates are intialised by using random(low, high) within a while loop so every star gets random coordinates within the 
@@ -43,14 +45,14 @@ at full power. This done with two triangles, the first increments fully to red t
 increment to a shade of red when the first has reached the orange colour. This affect is also done in reverse when the warp drive is 
 turned off.
 
-## Room Class
+### Room Class
 
 This class handles all the drawing aspects of the bedroom, like the walls and bed. It also houses the white board functionality. The
 white board works in a similar way that the buttons work. Instead of incrementing a variable and then having a seperate function, the
 drawing is done within the nested if statements. The xs and ys of the lines are folowing the mouse, this allows you to draw on the white 
 board.
 
-## Lab Class
+### Lab Class
 
 This class handles all the drawing aspects of the lab room and the functionality of the laser. The laser is controlled by the red 
 button. When the button is pressed the line is drawn and the stroke increases to look like a laser, when x2 of the line of the laser 
@@ -58,17 +60,17 @@ reaches the "element", the element starts to "evaporate" by the incrementing the
 fill reaches that point it stops to change and a second line is draw to make it seem like the the "element" has been completely 
 destroyed.
 
-## Button Class
+### Button Class
 
 This class holds the funtionality of the button that controls the blinds. The blinds move by incrementing and decrementing the y values 
 to a desired point.
 
-## Button2 Class
+### Button2 Class
 
 This class holds the arrays of the names of the planets. It also controls the planets button. When the button is pressed it increments a 
 variable "location", this variable is used to travel through the array and display the appropiate names and planets. 
 
-## Orbit Class
+### Orbit Class
 
 This class holds the functionality for the orbiting ellipse that travels around the planet diagrams. The orbit is controlled using the 
 following code:
@@ -89,44 +91,5 @@ The equation allows the centre of the ellipse to travel around a circle that is 
 
 # What I am most proud of in the assignment
 
-# Markdown Tutorial
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-
-
-This is the youtube video:
-
-https://youtu.be/nSGlqEqQKaU
-
-
+I am most proud of all the warp drive functionalities. This part was probably the hardest to achieve and took the most amount of time to 
+find a solution to but I believe it came out better than I was expecting and so it is the part I am most proud of.
